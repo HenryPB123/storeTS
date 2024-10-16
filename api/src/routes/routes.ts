@@ -1,10 +1,12 @@
 import { Router } from "express";
-import { getCategories } from "../controllers/categotyControl";
 import routerProducts from "./productRoutes";
+import routerCategories from "./categoryRoutes";
+import routerAuth from "./authRoute";
 
 const router = Router();
 
 router.use("/products", routerProducts);
-router.use("/categories", getCategories);
+router.use("/categories", routerCategories);
+router.use("/users", routerAuth);
 
 export default router;

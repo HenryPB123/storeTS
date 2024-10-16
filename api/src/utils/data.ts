@@ -1,8 +1,8 @@
 import axios from "axios";
-import Products from "../models/Product";
-import Categories from "../models/Category";
+import Product from "../models/Product";
+import Category from "../models/Category";
 
-interface Product {
+interface Products {
   id: number;
   title: string;
   price: number;
@@ -16,8 +16,8 @@ const getProductsFromApi = async () => {
   try {
     const products = (await axios("https://fakestoreapi.com/products")).data;
     products
-      ? products.forEach((p: Product) => {
-          Products.findOrCreate({
+      ? products.forEach((p: Products) => {
+          Product.findOrCreate({
             where: {
               id: p.id,
               name: p.title,
@@ -41,7 +41,7 @@ const getProductsFromApi = async () => {
 
     categories
       ? categories.forEach((c: string) => {
-          Categories.findOrCreate({
+          Category.findOrCreate({
             where: {
               name: c,
             },
