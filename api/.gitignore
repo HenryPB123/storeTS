@@ -31,3 +31,6 @@ yarn.lock
 
 # Other
 coverage/
+
+#Bash
+.bash
