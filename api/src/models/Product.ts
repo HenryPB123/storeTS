@@ -63,5 +63,4 @@ Product.init(
 // Relación muchos a muchos entre productos y categorías
 Product.belongsToMany(Category, { through: "ProductCategory" });
 Category.belongsToMany(Product, { through: "ProductCategory" });
-
 export default Product;
