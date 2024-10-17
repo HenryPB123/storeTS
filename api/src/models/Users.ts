@@ -14,8 +14,9 @@ class User extends Model {
 User.init(
   {
     id: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       primaryKey: true,
+      unique: true,
     },
     name: {
       type: DataTypes.STRING,
@@ -24,11 +25,6 @@ User.init(
     lastname: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
     },
     email: {
       type: DataTypes.STRING,
@@ -51,3 +47,5 @@ User.init(
     timestamps: true,
   }
 );
+
+export default User;

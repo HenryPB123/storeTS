@@ -1,5 +1,6 @@
 import { DataTypes, Model } from "sequelize";
 import sequelize from "../config/db";
+import Category from "./Category";
 
 class Product extends Model {
   public id!: number;
@@ -59,5 +60,8 @@ Product.init(
     timestamps: true, // Añadir automáticamente los campos createdAt y updatedAt
   }
 );
+// Relación muchos a muchos entre productos y categorías
+Product.belongsToMany(Category, { through: "ProductCategory" });
+Category.belongsToMany(Product, { through: "ProductCategory" });
 
 export default Product;

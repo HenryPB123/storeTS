@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# TypeScript cache
+*.tsbuildinfo
+
+# npm packages
+package-lock.json
+yarn.lock
+
+# IDE or Editor files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# MacOS
+.DS_Store
+
+# Other
+coverage/

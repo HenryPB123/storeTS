@@ -1,9 +1,10 @@
 import { Router } from "express";
+import { login, logout, register } from "../controllers/authControl";
 
 const routerAuth = Router();
 
-routerAuth.get("/", (req, res) => {
-  res.send("ahora le toca el turno a los usuarios");
-});
+routerAuth.get("/register", register);
+routerAuth.get("/login", login);
+routerAuth.get("/logout", logout);
 
 export = routerAuth;
